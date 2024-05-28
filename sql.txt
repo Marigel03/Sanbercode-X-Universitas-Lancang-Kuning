@@ -1,0 +1,53 @@
+1. buat database
+- CREATE DATABASE library;
+
+2. buat Table categories
+- CREATE TABLE categories (
+	id int PRIMARY KEY AUTO_INCREMENT,
+	name varchar(255) NOT null
+);
+
+- buat Table users
+CREATE TABLE users (
+	id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(255) NOT null,
+	email varchar(255) NOT null,
+	password varchar(255) NOT null
+);
+
+-buat Table books
+CREATE TABLE books (
+	id int AUTO_INCREMENT PRIMARY KEY,
+	title varchar(255) NOT null,
+	summary text NOT null,
+	stock int NOT null,
+	category_id int NOT null,
+	FOREIGN KEY(category_id) REFERENCES categories(id)
+)
+
+3. memasukkan data pada table
+- users
+INSERT INTO users (name,email,password) VALUES("Marigel irawan","marigelirawan99@gmail.com","marigel99" );
+
+- categories
+INSERT INTO categories(name)VALUES("Novel"),("Manga"),("Comic"),("History"),("IT");
+
+- books
+INSERT INTO books (title, summary, stock, category_id) 
+VALUES 
+("One Piece", "Serial ini berfokus pada Monkey D Luffy, seorang pemuda yang terbuat dari karet", 50, 2),
+("Laskar Pelangi", "Belitung dikenal karena kekayaan timahnya, menjadikannya salah satu pulau terkaya di Indonesia", 25, 1),
+("Your Name", "Mitsuha Miyamizu, seorang siswi SMA yang tinggal di kota fiksi Itomori di Prefektur Gifu", 15, 2);
+
+4. select data
+4a
+- SELECT id,name,email from users;
+
+4b
+- SELECT * FROM books WHERE stock > 20
+- SELECT * FROM `books` WHERE title LIKE '%ame%'
+
+4c
+- SELECT books.*, categories.name AS category FROM books INNER JOIN categories ON books.category_id = categories.id;
+
+5. UPDATE books SET stock=30 WHERE id = 1;
