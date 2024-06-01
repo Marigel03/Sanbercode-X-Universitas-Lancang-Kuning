@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Halaman Detail Genre
+Halaman Detail Genre Film
 @endsection
 
 @section('content')

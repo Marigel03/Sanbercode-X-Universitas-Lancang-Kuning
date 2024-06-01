@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Halaman Tambah Genre
+Halaman Tambah Genre Film
 @endsection
 
 @section('content')

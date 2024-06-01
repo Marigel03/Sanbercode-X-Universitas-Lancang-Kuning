@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Halaman Tampil Genre
+Halaman Tampil Genre Film
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@ Halaman Tampil Genre
     </tr>
     @empty
         <tr>
-            <td>Genre belum ada</td>
+            <td>Genre Film belum ada</td>
         </tr>
         
     @endforelse
